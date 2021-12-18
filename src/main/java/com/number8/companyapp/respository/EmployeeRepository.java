@@ -1,6 +1,6 @@
-package com.number8.testapp.respository;
+package com.number8.companyapp.respository;
 
-import com.number8.testapp.domain.Employee;
+import com.number8.companyapp.domain.Employee;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

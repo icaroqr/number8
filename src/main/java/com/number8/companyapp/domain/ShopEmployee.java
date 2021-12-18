@@ -1,36 +1,37 @@
-package com.number8.testapp.domain;
+package com.number8.companyapp.domain;
 
 import java.io.Serializable;
-import java.util.List;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Shop implements Serializable{
-    
+public class ShopEmployee implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    @ManyToOne
+    private Shop shop;
 
-    private String address;
+    @ManyToOne
+    private Employee employee;
 
-    private String telephone;
+    private Timestamp beginDate;
 
-    @OneToMany(mappedBy = "shop")
-    private List<ShopEmployee> employees;
+    private Timestamp endDate;
+    
 }
